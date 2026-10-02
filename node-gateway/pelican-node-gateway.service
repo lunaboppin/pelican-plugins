@@ -1,0 +1,13 @@
+[Unit]
+Description=Pelican node gateway (VS Code, SSH, Disk Analyzer, Git)
+After=docker.service wings.service
+Requires=docker.service
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/pelican-node-gateway
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

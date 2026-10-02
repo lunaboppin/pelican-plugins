@@ -1,0 +1,21 @@
+{
+    "id": "vscode-files",
+    "name": "VS Code File Manager",
+    "author": "frostepicgames",
+    "version": "1.0.0",
+    "description": "VS Code for the Web file manager (with a toggle back to the classic one) and a browser SSH console on the server Console page. Requires pelican-node-gateway on each node.",
+    "category": "plugin",
+    "url": null,
+    "update_url": null,
+    "namespace": "VsCodeFiles",
+    "class": "VsCodeFilesPlugin",
+    "panels": [
+        "server"
+    ],
+    "panel_version": "^1.0.0-beta38",
+    "composer_packages": null,
+    "meta": {
+        "status": "not_installed",
+        "status_message": null
+    }
+}

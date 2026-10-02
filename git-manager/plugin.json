@@ -1,0 +1,21 @@
+{
+    "id": "git-manager",
+    "name": "Git Manager",
+    "author": "frostepicgames",
+    "version": "1.0.0",
+    "description": "Find git repositories on a server, pull or clone them with a deploy key or HTTPS tokens, view commit history, and pull automatically from GitHub/GitLab webhooks. Requires pelican-vscode-gateway on the node.",
+    "category": "plugin",
+    "url": null,
+    "update_url": null,
+    "namespace": "GitManager",
+    "class": "GitManagerPlugin",
+    "panels": [
+        "server"
+    ],
+    "panel_version": "^1.0.0-beta38",
+    "composer_packages": null,
+    "meta": {
+        "status": "not_installed",
+        "status_message": null
+    }
+}

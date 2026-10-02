@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'title' => 'Disk Analyzer',
+    'subheading' => 'Visualize disk usage by file type and folder.',
+    'usage' => 'Disk Usage Analyzer',
+    'files' => 'files',
+    'last_scanned' => 'Last scanned',
+    'ago' => 'ago',
+    'rescan' => 'Rescan',
+    'fullscreen' => 'Fullscreen',
+    'root' => 'Root',
+    'scanning' => 'Scanning files…',
+    'failed' => 'Could not scan this server’s files.',
+    'retry' => 'Try again',
+    'empty' => 'This server has no files yet.',
+    'folders' => 'Folders',
+    'file_types' => 'File Type Breakdown',
+    'of_total' => 'of total',
+    'entries' => 'entries',
+    'truncated' => 'Very large server: only the first 2 million entries were scanned.',
+    'smaller_items' => 'smaller items',
+    'no_extension' => 'no extension',
+    'other' => 'other',
+];

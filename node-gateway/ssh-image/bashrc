@@ -1,0 +1,14 @@
+# System-wide bashrc for the Pelican SSH console.
+[ -z "$PS1" ] && return
+
+shopt -s checkwinsize histappend
+HISTSIZE=5000
+HISTFILESIZE=10000
+
+PS1='\[\e[1;32m\]container@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '
+
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias grep='grep --color=auto'
+
+[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion

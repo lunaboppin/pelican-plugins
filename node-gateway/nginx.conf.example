@@ -1,0 +1,34 @@
+# Expose pelican-node-gateway (127.0.0.1:8089) at /vscode-gw/.
+#
+# Panel and Wings on the same machine: add the location to the panel's server
+# block and keep the plugins' default gateway URL (APP_URL/vscode-gw).
+#
+# Separate node: add it to a TLS server block for the node's hostname, which must
+# be in the same domain as the panel (e.g. panel.example.com / node1.example.com)
+# so the VS Code iframe can keep its cookie. Then point the plugins at it
+# (see README, "Nodes on other machines").
+
+# In the http {} context (once):
+map $http_upgrade $vscode_connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+
+# Inside the server {} block:
+location ^~ /vscode-gw/ {
+    proxy_pass http://127.0.0.1:8089;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $vscode_connection_upgrade;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_read_timeout 1d;
+    proxy_send_timeout 1d;
+    proxy_buffering off;
+    client_max_body_size 0;
+}
+
+# Any proxy in front of this one (Cloudflare is fine for this part) must also
+# allow WebSocket upgrades for /vscode-gw/, or VS Code and the SSH console load
+# but can't connect.

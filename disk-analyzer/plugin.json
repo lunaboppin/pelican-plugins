@@ -1,0 +1,21 @@
+{
+    "id": "disk-analyzer",
+    "name": "Disk Analyzer",
+    "author": "frostepicgames",
+    "version": "1.0.0",
+    "description": "Visualize a server's disk usage by folder and file type with a zoomable treemap. Requires pelican-vscode-gateway on the node.",
+    "category": "plugin",
+    "url": null,
+    "update_url": null,
+    "namespace": "DiskAnalyzer",
+    "class": "DiskAnalyzerPlugin",
+    "panels": [
+        "server"
+    ],
+    "panel_version": "^1.0.0-beta38",
+    "composer_packages": null,
+    "meta": {
+        "status": "not_installed",
+        "status_message": null
+    }
+}
